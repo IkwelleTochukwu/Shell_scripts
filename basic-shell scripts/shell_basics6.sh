@@ -6,11 +6,11 @@ echo -n Enter the filename:
 read filename
 
 if [ -f $filename ]; then
-   if [ "$(ls -l "$filename" | awk '{print $3}')" = $(whoami) ]; then
-        if [ -w "$filename" ]; then
+   if [ "$(ls -l "$filename" | awk '{print $3}')" = $(whoami) ]; then  # this lists the file and checks for ownership
+        if [ -w "$filename" ]; then   # check whether the file is writeable
             echo You are the owner of this file and the file is writable.
         else
-            chmod +w "$filename"
+            chmod +w "$filename"   # this makes the file writeable
             echo $filename is now writeable.
         fi
     else
