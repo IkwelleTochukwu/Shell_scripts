@@ -34,4 +34,7 @@ function evaluate {
     echo -e "Product\t = $number1 * $number2 = $prod"
 }
 
-evaluate
+# Invoke function if the input is valid
+if [[ ...]]; then
+    evaluate
+fi
